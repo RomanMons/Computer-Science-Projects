@@ -1,0 +1,26 @@
+{
+    "type": "origins:multiple",
+    "name": "§e§n§lWarm Heart",
+    "description": "The warrior's passion seeps through its skin, brightening up its surroundings. Your unwavering passion has also granted you resistance to flames. \n\n(Immunity to fire, except lava)",
+    "fire": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "onFire"
+        }
+    },
+    "fire1": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "inFire"
+        }
+    },
+    "magma": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "hotFloor"
+        }
+    }
+}

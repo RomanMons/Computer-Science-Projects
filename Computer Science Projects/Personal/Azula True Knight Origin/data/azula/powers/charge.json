@@ -1,0 +1,150 @@
+{
+    "type": "origins:multiple",
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "azula:final_toggle",
+            "inverted": true
+        }
+    },
+    "power": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:power_active",
+                                "power": "azula:charge_toggle"
+                            },
+                            {
+                                "type": "origins:power_active",
+                                "power": "azula:final_toggle",
+                                "inverted": true
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:grant_power",
+                                "power": "azula:slash",
+                                "source": "azula:powers"
+                            },
+                            {
+                                "type": "origins:grant_power",
+                                "power": "azula:smelt",
+                                "source": "azula:powers"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.generic.burn player RomandracoMC ~ ~ ~ 100 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle cataclysm:soul_lava ~ ~1 ~ 1.5 1 1.5 10 75 force"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "azula:bar1",
+                                "change": 1000,
+                                "operation": "set"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:power_active",
+                                "inverted": true,
+                                "power": "azula:charge_toggle"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:revoke_power",
+                                "power": "azula:slash",
+                                "source": "azula:powers"
+                            },
+                            {
+                                "type": "origins:revoke_power",
+                                "power": "azula:smelt",
+                                "source": "azula:powers"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.generic.burn player RomandracoMC ~ ~ ~ 100 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle smoke ~ ~1.35 ~ 0.3 0.3 0.3 0 35 force"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "azula:bar1",
+                                "change": 0,
+                                "operation": "set"
+                            }
+                        ]
+                    }
+                }
+            ] 
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "power1": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar1",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": 500,
+                    "operation": "set"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "azula:final_toggle"
+        }
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/icons/blue_slash.png",
+            "text": ["Press [",{"keybind": "key.origins.primary_active"},"] to activate flame bar then use [",{"keybind": "key.origins.secondary_active"},"] to use ability."]
+        }
+    ],
+    "name": "§3§n§lScorching Demi-Lune",
+    "description": "You can channel energy from your now blazing heart, hot as an erupt volcano making the surroundings needless to produce a destructive air slash, with any kind of weapon (takes 15% of your resource bar). Without the aid of a weapon or without enough energy (less than 15%) you can produce a smokescreen capable of creating a diversion but also scorch the foes caught up in the smoke. Furthermore, now taking power from your heart itselt and not the surroundings, you have overcome your inability to use your fullest capabilities in water. \n\n(You can still use 'Scorching Demi-Lune' in water or in rain)"
+}

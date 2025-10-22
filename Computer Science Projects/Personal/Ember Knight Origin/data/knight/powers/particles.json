@@ -1,0 +1,195 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "lit1": {
+        "type": "origins:particle",
+        "particle": "minecraft:flame",
+        "count": 5,
+        "frequency": 4.69,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "inverted": true,
+                    "conditions": [
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": ">",
+                            "compare_to": 0.0
+                        },
+                        {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "knight:bar",
+                    "comparison": "<=",
+                    "compare_to": 300
+                }
+            ]
+        }
+    },
+    "lit2": {
+        "type": "origins:particle",
+        "particle": "minecraft:flame",
+        "count": 10,
+        "frequency": 5.69,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "inverted": true,
+                    "conditions": [
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": ">",
+                            "compare_to": 0.0
+                        },
+                        {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "knight:bar",
+                    "comparison": ">",
+                    "compare_to": 300
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "knight:bar",
+                    "comparison": "<=",
+                    "compare_to": 600
+                }
+            ]
+        }
+    },
+    "lit3": {
+        "type": "origins:particle",
+        "particle": "minecraft:flame",
+        "count": 20,
+        "frequency": 7.69,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "inverted": true,
+                    "conditions": [
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": ">",
+                            "compare_to": 0.0
+                        },
+                        {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "knight:bar",
+                    "comparison": ">",
+                    "compare_to": 600
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "knight:bar",
+                    "comparison": "<",
+                    "compare_to": 1000
+                }
+            ]
+        }
+    },
+    "fire": {
+        "type": "origins:particle",
+        "particle": "minecraft:flame",
+        "count": 30,
+        "frequency": 9,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "inverted": true,
+                    "conditions": [
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": ">",
+                            "compare_to": 0.0
+                        },
+                        {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "knight:bar",
+                    "comparison": "==",
+                    "compare_to": 1000
+                }
+            ]
+        }
+    },
+    "smoke": {
+        "type": "origins:particle",
+        "particle": "minecraft:smoke",
+        "count": 15,
+        "frequency": 6.9,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "inverted": true,
+                    "conditions": [
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": ">",
+                            "compare_to": 0.0
+                        },
+                        {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "knight:bar",
+                    "comparison": "==",
+                    "compare_to": 1000
+                }
+            ]
+        }
+    },
+    "unlit": {
+        "type": "origins:particle",
+        "particle": "minecraft:smoke",
+        "frequency": 4.69,
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0.0
+                },
+                {
+                    "type": "origins:in_rain"
+                }
+            ]
+        }
+    }
+}

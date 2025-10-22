@@ -1,0 +1,25 @@
+{
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+        "type": "origins:set_on_fire",
+        "duration": 3.5
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:in_rain",
+                "inverted": true
+            },
+            {
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": ">",
+                "compare_to": 0.0,
+                "inverted": true
+            }
+        ]
+    },
+    "name": "§6§n§lBlazing Spirit",
+    "description": "As another effect of your burning heart, you have gained the ability to set anything you hit, on fire. Nevertheless, this can also be a hindrance, as this is permanent and uncontrollable; you might discover how to better control those powers, further along your adventure."
+}

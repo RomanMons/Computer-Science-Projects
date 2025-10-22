@@ -1,0 +1,24 @@
+{
+    "name":"§a§n§lSymbol of Respect",
+    "description":"By slaying the dragon of the End, you have proven yourself as being trustworthy amongst the locals, everyone adores and acknowledges you after accomplishing such a feat, you have truly become a knight. \n\n(Villager prices are decreased)",
+    "type":"origins:action_over_time",
+    "interval":10,
+    "entity_action":{
+        "type":"origins:and",
+        "actions":[
+            {
+                "type":"origins:execute_command",
+                "command":"execute at @s as @e[type=villager,distance=..7] run data merge entity @s {Gossips:[{Target:[I;1,1,1,1],Type:'major_positive',Value:14}]}"
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"execute at @s as @e[type=villager,distance=..7] run data modify entity @s Gossips[{Target:[I;1,1,1,1]}].Target set from entity @p UUID"
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:power_active",
+        "power": "azula:final_toggle",
+        "inverted": true
+    }
+}

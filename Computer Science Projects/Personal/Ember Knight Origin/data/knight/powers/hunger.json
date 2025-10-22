@@ -1,0 +1,10 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "name": "Extra exhaustion from large appetite",
+      "value": 0.6,
+      "operation": "multiply_base"
+    },
+    "name": "§7§n§lKnightly Stature",
+    "description": "Being bulkier than your average human making you stand out more. \nHowever due to your more imposing stature you exhaust yourself much faster thus requiring to eat more often. Even the best of knights must to satiate their hunger."
+}

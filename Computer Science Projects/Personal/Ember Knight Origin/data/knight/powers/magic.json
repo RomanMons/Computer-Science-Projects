@@ -1,0 +1,115 @@
+{
+    "type": "origins:multiple",
+    "magic": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.2
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "magic" 
+        }
+    },
+    "magic_pl": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.2
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "magic.player" 
+        }
+    },
+    "ind_magic": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.2
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "indirectMagic" 
+        }
+    },
+    "ind_magic_item": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.2
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "indirectMagic.item" 
+        }
+    },
+    "sonicboom": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.2
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "sonic_boom" 
+        }
+    },
+    "sonicboom_pl": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.2
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "sonic_boom.player" 
+        }
+    },
+    "sonicboom_item": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.2
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "sonic_boom.item" 
+        }
+    },
+    "wither": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.2
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "wither" 
+        }
+    },
+    "wither_pl": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.2
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "wither.player" 
+        }
+    },
+    "wither_skull": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 1.3
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "witherSkull" 
+        }
+    },
+    "name": "§5§n§lUnknown Forces",
+    "description": "The encounter of unexplicable forces confuses you, making you more vulnerable to paranormal effects such as darkness or withering and even more against magic. \n\n(Weak and slow when affected by darkness;\nTake more damage from magic, wither based attacks and sonic booms)"
+}

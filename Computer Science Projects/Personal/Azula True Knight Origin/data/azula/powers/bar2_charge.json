@@ -1,0 +1,9 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "azula:bar2",
+        "change": 20
+    },
+    "interval": 20
+}

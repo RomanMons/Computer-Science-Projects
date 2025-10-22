@@ -1,0 +1,51 @@
+{
+    "type": "origins:multiple",
+    "slow": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "name": "Max movement decrease",
+            "attribute": "minecraft:generic.movement_speed",
+            "value": -0.16,
+            "operation": "multiply_total"
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0.0
+                },
+                {
+                    "type": "origins:in_rain"
+                }
+            ]
+        }
+    },
+    "weak": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "name": "Max damage decrease",
+            "attribute": "minecraft:generic.attack_damage",
+            "value": -4,
+            "operation": "addition"
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0.0
+                },
+                {
+                    "type": "origins:in_rain"
+                }
+            ]
+        }
+    },
+    "name": "§1§n§lWater Vulnerability",
+    "description": "Having set your heart ablaze, naturally this has resulted in an inevitable weakness to the water element; weakening your knight strength and slowing your movements, whilst also cancelling your abilities. \nFurthermore, water damages you."
+}

@@ -1,0 +1,12 @@
+{
+    "hidden": true,
+    "type": "origins:particle",
+    "particle": "minecraft:soul_fire_flame",
+    "count": 7,
+    "frequency": 9.69,
+    "condition": {
+        "type": "origins:power_active",
+        "power": "azula:final_toggle",
+        "inverted": true
+    }
+}

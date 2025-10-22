@@ -1,0 +1,35 @@
+{
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+        "type": "origins:set_on_fire",
+        "duration": 7
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/item/lava_bucket.png",
+            "text": ["Press [",{"keybind": "key.origins.primary_active"},"] to activate and then press [",{"keybind": "key.use"},"] to smelt blocks, while sneaking."]
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/item/flint_and_steel.png",
+            "text": ["Press [",{"keybind": "key.origins.primary_active"},"] to activate then press [",{"keybind": "key.attack"},"] to set entities on fire upon hit, or press [",{"keybind": "key.use"},"] to ignite blocks."]
+        }
+    ],
+    "name": "§6§n§lUntamable Spirit",
+    "description": "As an effect of your burning heart, you set any thing you touch on fire but throughout countless experiences, have managed to control your powers and use them only when necessary. As a result of your adventure, you have also learned to smelt items in your hand and even to spread this flame to blocks by igniting them directly. \n\n(Both abilities consume the flame resource bar: Smelt = 2%, Ignite = 1%)",
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:power_active",
+                "power": "azula:final_toggle",
+                "inverted": true
+            },
+            {
+                "type": "origins:power_active",
+                "power": "azula:charge_toggle"
+            }
+        ]
+    }
+}

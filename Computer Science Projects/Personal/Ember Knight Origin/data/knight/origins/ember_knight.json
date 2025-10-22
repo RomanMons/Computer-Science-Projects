@@ -1,0 +1,34 @@
+{
+	"powers": [
+        "knight:bar_charge",
+        "knight:fire_immunity",
+        "knight:stance",
+        "knight:particles",
+        "knight:bright",
+        "knight:fire_hit",
+        "knight:charge",
+        "knight:consume",
+        "knight:water",
+        "knight:hydrophobia",
+        "knight:dark",
+        "knight:magic",
+        "knight:fear",
+        "knight:hunger",
+        "knight:bulk",
+        "knight:bar",
+        "knight:bar1",
+        "knight:set"
+	],
+	"icon": "minecraft:blaze_powder",
+	"order": 15,
+	"impact": 3,
+	"name": "Ember Knight",
+	"description": "A calm and modest knight from a faraway land. You, The knight through your fiery passion, have set out on a quest to seek for your true power. \nWhat shall await the hero, whom has set its heart ablaze ?",
+    "upgrades": [
+        {
+            "condition": "minecraft:end/kill_dragon",
+            "origin": "azula:azula_true_knight",
+            "announcement": "§3§l§nYou have reached your maximum potential ! You have arisen to the grade of a Azula True Knight."
+        }
+    ]
+}

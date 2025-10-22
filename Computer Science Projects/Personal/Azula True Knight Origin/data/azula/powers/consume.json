@@ -1,0 +1,436 @@
+{
+    "type": "origins:multiple",
+    "rod1": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:blaze_rod"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": "<",
+                    "compare_to": 2000
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:feed",
+                    "food": 5,
+                    "saturation": 0.2
+                },
+                {
+                    "type": "origins:play_sound",
+                    "volume": 1,
+                    "pitch": 1.5,
+                    "sound": "minecraft:entity.generic.burn"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": 200
+                }
+            ]
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        }
+    },
+    "rod2": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:blaze_rod"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": "<",
+                    "compare_to": 2000
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:feed",
+                    "food": 5,
+                    "saturation": 0.2
+                },
+                {
+                    "type": "origins:play_sound",
+                    "volume": 1,
+                    "pitch": 1.5,
+                    "sound": "minecraft:entity.generic.burn"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": 200
+                }
+            ]
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        }
+    },
+    "powder1": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:blaze_powder"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": "<",
+                    "compare_to": 2000
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:feed",
+                    "food": 3,
+                    "saturation": 0.25
+                },
+                {
+                    "type": "origins:play_sound",
+                    "volume": 1,
+                    "pitch": 1.5,
+                    "sound": "minecraft:entity.generic.burn"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": 100
+                }
+            ]
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        }
+    },
+    "powder2": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:blaze_powder"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": "<",
+                    "compare_to": 2000
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:feed",
+                    "food": 3,
+                    "saturation": 0.25
+                },
+                {
+                    "type": "origins:play_sound",
+                    "volume": 1,
+                    "pitch": 1.5,
+                    "sound": "minecraft:entity.generic.burn"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": 100
+                }
+            ]
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        }
+    },
+    "fire_charge1": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:fire_charge"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": "<",
+                    "compare_to": 2000
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:feed",
+                    "food": 1,
+                    "saturation": 0.25
+                },
+                {
+                    "type": "origins:play_sound",
+                    "volume": 1,
+                    "pitch": 1.5,
+                    "sound": "minecraft:entity.generic.burn"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": 50
+                }
+            ]
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        }
+    },
+    "fire_charge2": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:fire_charge"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": "<",
+                    "compare_to": 2000
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:feed",
+                    "food": 1,
+                    "saturation": 0.25
+                },
+                {
+                    "type": "origins:play_sound",
+                    "volume": 1,
+                    "pitch": 1.5,
+                    "sound": "minecraft:entity.generic.burn"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": 50
+                }
+            ]
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        }
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/item/fire_charge.png",
+            "text": ["You can eat fire charges, [",{"keybind": "key.use"},"], while sneaking."]
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/item/blaze_powder.png",
+            "text": ["You can eat blaze powder, [",{"keybind": "key.use"},"], while sneaking."]
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/item/blaze_rod.png",
+            "text": ["You can eat blaze rods, [",{"keybind": "key.use"},"], while sneaking."]
+        }
+    ],
+    "name": "§6§n§lFiery Diet",
+    "description": "Your metabolism has evolved and you are know able to consume fire in its purest forms, whilst consuming all of the item's calorific energy, which can help charge your flame resource bar faster. \n\n(Fire Charge = 2.5%, \nBlaze Powder 5%, \nBlaze Rod = 10%)"
+}

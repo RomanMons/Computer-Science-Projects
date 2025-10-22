@@ -1,0 +1,216 @@
+{
+	"type": "origins:multiple",
+    "dash": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": ">=",
+                    "compare_to": 200
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:charge_toggle",
+                    "inverted": true
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:raycast",
+                    "distance": 5,
+                    "block": true,
+                    "entity": true,
+                    "shape_type": "outline",
+                    "fluid_handling": "none",
+                    "bientity_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:grant_power",
+                                            "power": "azula:invulnerability",
+                                            "source": "azula:powers"
+                                        },
+                                        {
+                                            "type": "origins:delay",
+                                            "ticks": 40,
+                                            "action": {
+                                                "type": "origins:revoke_power",
+                                                "power": "azula:invulnerability",
+                                                "source": "azula:powers"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:damage",
+                                            "amount": 6,
+                                            "damage_type": "minecraft:in_fire"
+                                        },
+                                        {
+                                            "type": "origins:set_on_fire",
+                                            "duration": 2
+                                        },
+                                        {
+                                            "type": "origins:damage",
+                                            "amount": 3,
+                                            "damage_type": "minecraft:fly_into_wall"
+                                        },
+                                        {
+                                            "type": "origins:explode",
+                                            "power": 3,
+                                            "destruction_type": "none",
+                                            "damage_self": false,
+                                            "create_fire": false
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "azula:bar",
+                                            "change": -200
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "miss_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:add_velocity",
+                                "z": 1.5,
+                                "space":"local"
+                            },
+                            {
+                                "type": "origins:explode",
+                                "power": 3,
+                                "destruction_type": "none",
+                                "damage_self": false,
+                                "create_fire": false
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "azula:bar",
+                                "change": -200
+                            },
+                            {
+                                "type": "origins:grant_power",
+                                "power": "azula:invulnerability",
+                                "source": "azula:powers"
+                            },
+                            {
+                                "type": "origins:delay",
+                                "ticks": 40,
+                                "action": {
+                                    "type": "origins:revoke_power",
+                                    "power": "azula:invulnerability",
+                                    "source": "azula:powers"
+                                }
+                            }
+                        ]
+                    },
+                    "hit_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:add_velocity",
+                                "z": 1.5,
+                                "space":"local"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "azula:bar",
+                                "change": -200
+                            }
+                        ]
+                    },
+                    "command_along_ray": "function azula:fire_wheel",
+                    "command_step": 1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.ghast.shoot player RomandracoMC ~ ~ ~ 100 1"
+                }
+            ]
+        },
+        "cooldown": 50,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 20,
+            "order": 10
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "fail": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": "<",
+                    "compare_to": 200
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.generic.burn player RomandracoMC ~ ~ ~ 100 1"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle smoke ~ ~1.35 ~ 0.3 0.3 0.3 0 35 force"
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/icons/fire.png",
+            "text": ["Press [",{"keybind": "key.origins.secondary_active"},"] to use ability."]
+        }
+    ],
+	"name": "§4§n§lNitrocharge",
+	"description": "By explosively igniting fire around your body, you can create a short flame charge (5 blocks forward) damaging and knocking back foes in your way.\n\n(Uses 10% of resource bar)"
+}

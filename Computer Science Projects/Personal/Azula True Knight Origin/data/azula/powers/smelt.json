@@ -1,0 +1,53 @@
+{
+	"type": "origins:active_self",
+	"cooldown": 5,
+	"entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "execute as @s run function azula:smelt"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.generic.burn player RomandracoMC ^ ^ ^ 1 2 1"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "azula:bar",
+                "change": -40
+            }
+        ]
+	},
+	"condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:smeltable"
+                }
+            },
+            {
+                "type": "origins:sneaking"
+            },
+            {
+                "type": "origins:power_active",
+                "power": "azula:final_toggle",
+                "inverted": true
+            },
+            {
+                "type": "origins:resource",
+                "resource": "azula:bar",
+                "comparison": ">",
+                "compare_to": 40
+            }
+        ]
+	},
+    "key": {
+        "key": "key.use",
+        "continuous": true
+    },
+    "hidden": true
+}

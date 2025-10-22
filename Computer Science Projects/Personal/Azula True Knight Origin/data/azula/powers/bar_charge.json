@@ -1,0 +1,124 @@
+{
+    "type": "origins:multiple",
+    "charge": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "azula:bar",
+            "change": 30
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:on_fire",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:block",
+                        "block": "minecraft:magma_block"
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "charge1": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "azula:bar",
+            "change": 40
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:on_fire"
+                },
+                {
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:block",
+                        "block": "minecraft:magma_block"
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "charge2": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "azula:bar",
+            "change": 35
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:on_fire",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:block",
+                        "block": "minecraft:magma_block"
+                    }
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "charge3": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "azula:bar",
+            "change": 50
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:on_fire"
+                },
+                {
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:block",
+                        "block": "minecraft:magma_block"
+                    }
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "hidden": true
+}

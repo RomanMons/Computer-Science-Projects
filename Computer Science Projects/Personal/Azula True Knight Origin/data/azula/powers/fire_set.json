@@ -1,0 +1,219 @@
+{
+    "type": "origins:multiple",
+    "fire": {
+        "type": "origins:action_on_block_use",
+        "block_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_block",
+                    "block": "minecraft:fire"
+
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:item.flintandsteel.use block RomandracoMC ^ ^ ^ 1000 1"
+                }
+            ]
+        },
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:soul_sand",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:soul_soil",
+                    "inverted": true
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:charge_toggle"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": ">",
+                    "compare_to": 20
+                }
+            ]
+        }
+    },
+    "fire1": {
+        "type": "origins:action_on_block_use",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:swing_hand",
+                    "hand": "MAIN_HAND"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": -20
+                }
+            ]
+        },
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:soul_sand",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:soul_soil",
+                    "inverted": true
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:charge_toggle"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": ">",
+                    "compare_to": 20
+                }
+            ]
+        }
+    },
+    "soul_fire": {
+        "type": "origins:action_on_block_use",
+        "block_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_block",
+                    "block": "minecraft:fire"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:item.flintandsteel.use block RomandracoMC ^ ^ ^ 1000 1"
+                }
+            ]
+        },
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:soul_sand"
+                },
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:soul_soil"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:charge_toggle"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": ">",
+                    "compare_to": 20
+                }
+            ]
+        }
+    },
+    "soul_fire1": {
+        "type": "origins:action_on_block_use",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:swing_hand",
+                    "hand": "MAIN_HAND"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": -20
+                }
+            ]
+        },
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:soul_sand"
+                },
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:soul_soil"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:charge_toggle"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "azula:bar",
+                    "comparison": ">",
+                    "compare_to": 20
+                }
+            ]
+        }
+    },
+    "hidden": true
+}

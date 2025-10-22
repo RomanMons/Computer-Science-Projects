@@ -1,0 +1,19 @@
+{
+    "name":"§4§n§lMenacing Silhouette",
+    "description":"A knight of your calibur's strength is undeniable, but as a warrior from a faraway land, your unbeknownst strength, frightens the locals. \n\n(Villager prices are increased)",
+   "type":"origins:action_over_time",
+   "interval":10,
+   "entity_action":{
+      "type":"origins:and",
+      "actions":[
+         {
+            "type":"origins:execute_command",
+            "command":"execute at @s as @e[type=villager,distance=..7] run data merge entity @s {Gossips:[{Target:[I;1,1,1,1],Type:'major_negative',Value:35}]}"
+         },
+         {
+            "type":"origins:execute_command",
+            "command":"execute at @s as @e[type=villager,distance=..7] run data modify entity @s Gossips[{Target:[I;1,1,1,1]}].Target set from entity @p UUID"
+         }
+      ]
+   }
+}

@@ -1,0 +1,51 @@
+{
+    "type": "apoli:multiple",
+    "light": {
+        "type": "apoli:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:spawn_entity",
+                    "entity_type": "armor_stand",
+                    "entity_action": {
+                        "type": "apoli:and",
+                        "actions": [
+                            {
+                                "type": "apoli:execute_command",
+                                "command": "execute align xyz run tp ~0.5 ~0.5 ~0.5"
+                            },
+                            {
+                                "type": "apoli:grant_power",
+                                "power": "*:light",
+                                "source": "*:*"
+                            }
+                        ]
+                    },
+                    "tag": "{Tags:[\"lightlibstand\"],Invulnerable:1,NoGravity:1,Invisible:1,Marker:1,Small:1}"
+                },
+                {
+                    "type": "apoli:spawn_entity",
+                    "entity_type": "armor_stand",
+                    "entity_action": {
+                        "type": "apoli:and",
+                        "actions": [
+                            {
+                                "type": "apoli:execute_command",
+                                "command": "execute align xyz run tp ~0.5 ~1.5 ~0.5"
+                            },
+                            {
+                                "type": "apoli:grant_power",
+                                "power": "*:light",
+                                "source": "*:*"
+                            }
+                        ]
+                    },
+                    "tag": "{Tags:[\"lightlibstand\"],Invulnerable:1,NoGravity:1,Invisible:1,Marker:1,Small:1}"
+                }
+            ]
+        }
+    },
+    "hidden": true
+}

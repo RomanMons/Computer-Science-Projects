@@ -1,0 +1,42 @@
+{
+    "name": "§e§n§lFlaming Heart",
+    "description": "The warrior's passion seeps through its skin, strongly brightening up its surroundings. Through your journey, you have reinforced your body granting you resistance to even the deepest of flames. \n\n(Immunity to every type of fire source)",
+    "type": "origins:multiple",
+    "immunity": {
+        "type": "origins:fire_immunity",
+        "condition":{
+            "type": "origins:power_active",
+            "power": "azula:final_toggle",
+            "inverted": true
+        }
+    },
+    "vision": {
+        "condition":{
+            "type": "origins:power_active",
+            "power": "azula:final_toggle",
+            "inverted": true
+        },
+        "type": "origins:lava_vision",
+        "s": 0,
+        "v": 30
+    },
+    "swim": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0.0
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                }
+            ]
+        }
+    }
+}

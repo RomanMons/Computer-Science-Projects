@@ -1,0 +1,234 @@
+{
+    "type": "origins:multiple",
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "power": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:power_active",
+                                "power": "knight:charge_toggle"
+                            },
+                            {
+                                "type": "origins:or",
+                                "inverted": true,
+                                "conditions": [
+                                    {
+                                        "type": "origins:fluid_height",
+                                        "fluid": "minecraft:water",
+                                        "comparison": ">",
+                                        "compare_to": 0.0
+                                    },
+                                    {
+                                        "type": "origins:in_rain"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:grant_power",
+                                "power": "knight:slash",
+                                "source": "knight:powers"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.generic.burn player RomandracoMC ~ ~ ~ 100 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle lava ~ ~1 ~ 1.5 1 1.5 10 75 force"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "knight:bar1",
+                                "change": 1000,
+                                "operation": "set"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:power_active",
+                                "inverted": true,
+                                "power": "knight:charge_toggle"
+                            },
+                            {
+                                "type": "origins:or",
+                                "inverted": true,
+                                "conditions": [
+                                    {
+                                        "type": "origins:fluid_height",
+                                        "fluid": "minecraft:water",
+                                        "comparison": ">",
+                                        "compare_to": 0.0
+                                    },
+                                    {
+                                        "type": "origins:in_rain"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:revoke_power",
+                                "power": "knight:slash",
+                                "source": "knight:powers"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.generic.burn player RomandracoMC ~ ~ ~ 100 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle smoke ~ ~1.35 ~ 0.3 0.3 0.3 0 35 force"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "knight:bar1",
+                                "change": 0,
+                                "operation": "set"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:power_active",
+                                "inverted": true,
+                                "power": "knight:charge_toggle"
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:fluid_height",
+                                        "fluid": "minecraft:water",
+                                        "comparison": ">",
+                                        "compare_to": 0.0
+                                    },
+                                    {
+                                        "type": "origins:in_rain"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:revoke_power",
+                                "power": "knight:slash",
+                                "source": "knight:powers"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.generic.burn player RomandracoMC ~ ~ ~ 100 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle smoke ~ ~1.35 ~ 0.3 0.3 0.3 0 35 force"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "knight:bar1",
+                                "change": 0,
+                                "operation": "set"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:power_active",
+                                "power": "knight:charge_toggle"
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:fluid_height",
+                                        "fluid": "minecraft:water",
+                                        "comparison": ">",
+                                        "compare_to": 0.0
+                                    },
+                                    {
+                                        "type": "origins:in_rain"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:revoke_power",
+                                "power": "knight:slash",
+                                "source": "knight:powers"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.generic.burn player RomandracoMC ~ ~ ~ 100 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle smoke ~ ~1.35 ~ 0.3 0.3 0.3 0 35 force"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "knight:bar1",
+                                "change": 0,
+                                "operation": "set"
+                            }
+                        ]
+                    }
+                }
+            ] 
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/icons/fire.png",
+            "text": "Press 'Primary Key' to activate and deactivate power, than press 'Left-click' (attack key) to release attack"
+        }
+    ],
+    "name": "§c§n§lSearing Crescent",
+    "description": "You channel energy from your burning heart and surroundings, into your weapon (sword or axe) to then release it in the form of a destructive air slash (takes 30% of your resource bar). Without the aid of a weapon or without enough energy (less than 30%), all the stored energy will release in the form of a smokescreen which may also result in damaging yourself depending on the energy absorbed. The power of your slash will depend on the calorific energy of your surroundings (biome), however, if on a fire source, you will always bring out your maximum output. Furthermore, a knight has pride in its own power but must also acknowledge its own weaknesses, thus it wouldn't be wise to use one's powers in an unfavorable situation. \n\n(Get damaged by trying to use 'Searing Crescent' in water or under rain)"
+}

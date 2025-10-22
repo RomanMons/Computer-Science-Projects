@@ -1,0 +1,10 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "name": "Extra exhaustion from large appetite",
+      "value": 0.7,
+      "operation": "multiply_base"
+    },
+    "name": "§7§n§lTrue Knight Stature",
+    "description": "Being even bulkier you stand out even more. \nDue to your imposting stature you require more food as you exhaust quicker. Even the truest of knights must to satiate their hunger."
+}

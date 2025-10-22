@@ -1,0 +1,34 @@
+{
+	"powers": [
+        "azula:fire_immunity",
+        "azula:fire_hit",
+        "azula:fire_set",
+        "azula:dash",
+        "azula:charge",
+        "azula:consume",
+        "azula:stance",
+		"azula:set",
+        "azula:bar",
+        "azula:bar1",
+        "azula:bar_charge",
+        "azula:bright",
+        "azula:respect",
+        "azula:hydrophobia",
+        "azula:magic",
+        "azula:hunger",
+        "azula:particles",
+        "azula:bulk",
+        "azula:dark",
+        "azula:final_set",
+        "azula:cooldown"
+	],
+	"icon": {
+        "item": "minecraft:blaze_powder",
+        "tag": "{CustomModelData:1}"
+    },
+    "unchoosable": true,
+	"order": 10,
+	"impact": 3,
+	"name": "True Azula Knight",
+	"description": "You have awoken ! You have finally brought out your true potential after slaying the fierce dragon of the End. Thus, you have become the True Azula Knight !"
+}

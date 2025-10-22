@@ -1,0 +1,10 @@
+9 Betty 51
+3 Arthur 40
+1 Arthur 65
+6 Clare 54
+7 Betty 79
+2 Clare 34
+5 Betty 37
+8 Betty 26
+4 Clare 49
+0 Betty 42

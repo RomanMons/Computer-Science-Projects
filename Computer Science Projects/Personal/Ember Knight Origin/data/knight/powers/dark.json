@@ -1,0 +1,30 @@
+{
+    "condition": 
+            {
+                "type": "origins:status_effect",
+                "effect": "minecraft:darkness",
+                "min_amplifier": 0
+            },
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 3,
+    "duration_per_stack": 35,
+    "tick_rate": 10,
+    "effects": [
+        {
+            "effect": "minecraft:slowness",
+            "duration": 35,
+            "amplifier": 0,
+            "show_particles": false,
+            "show_icon": true
+        },
+        {
+            "effect": "minecraft:weakness",
+            "duration": 35,
+            "amplifier": 0,
+            "show_particles": false,
+            "show_icon": true
+        }
+    ],
+    "hidden": true
+}

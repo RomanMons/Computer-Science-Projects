@@ -1,0 +1,68 @@
+{
+    "name": "§3§n§lAzula Burst",
+    "description": "You have developped an ultimate attack using every ounce of your strength, by creating a fiery explosion destroying everything and everyone in its radius, by squeezing every last bit of strength you also burn and smite every foe in the area. For a couple of seconds after its use, you use your life force to harden your skin to an unbreakable state and gain a surge of speed, however after such a display, you become extremely vulnerable and unable to use your capabilities (health halved, shorter in size, slower, weaker and §n§lEVERY§r single power is disabled until cooldown has ended). Nevertheless, you gain your powers back overtime. \n\n(Slowly for 10 minutes)",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "azula:bar",
+            "comparison": "==",
+            "compare_to": 2000
+        },
+        "if_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:grant_power",
+                    "power": "azula:final_gambit",
+                    "source": "azula:powers"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:final_gambit",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:grant_power",
+                    "power": "azula:final_setbar",
+                    "source": "azula:powers"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:final_setbar",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "azula:cooldown"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.generic.burn player RomandracoMC ~ ~ ~ 100 2 1"
+                }
+            ]
+        },
+        "else_action": {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:entity.generic.extinguish_fire player RomandracoMC ~ ~ ~ 100 2 1"
+        }
+    },
+    "cooldown": "200",
+    "key": "key.loadToolbarActivator",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/icons/blue_explosion.png",
+            "text": ["§n§lThis ability can only be used with a fully charged bar !!!§r","\nPress [",{"keybind": "key.loadToolbarActivator"},"] to activate ability and then press [",{"keybind": "key.saveToolbarActivator"},"] to use ability.","\nGrey bar indicated the ability's cooldown, Bomb bar appears when the explosion can be set off. \nAbility is cancelled if ability isn't used after activation. (After 5 seconds, when Bomb bar disappears)"]
+        }
+    ]
+}

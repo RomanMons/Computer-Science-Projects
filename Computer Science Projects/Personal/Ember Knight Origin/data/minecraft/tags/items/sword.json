@@ -1,0 +1,28 @@
+{
+    "values": [
+        "aquamirae:coral_lance",
+        "aquamirae:dagger_of_greed",
+        "aquamirae:divider",
+        "aquamirae:fin_cutter",
+        "aquamirae:poisoned_blade",
+        "aquamirae:remnants_saber",
+        "aquamirae:whisper_of_the_abyss",
+        "aquamirae:terrible_sword",
+        "bosses_of_mass_destruction:earthdive_spear",
+        "cataclysm:athame",
+        "cataclysm:coral_bardiche",
+        "cataclysm:coral_spear",
+        "cataclysm:khopesh",
+        "cataclysm:meat_shredder",
+        "cataclysm:the_incinerator",
+        "endlessbiomes:void_touched_blade",
+        "majruszsdifficulty:enderium_sword",
+        "majruszsdifficulty:wither_sword",
+        "minecraft:wooden_sword",
+        "minecraft:stone_sword",
+        "minecraft:golden_sword",
+        "minecraft:iron_sword",
+        "minecraft:diamond_sword",
+        "minecraft:netherite_sword"
+    ]
+}

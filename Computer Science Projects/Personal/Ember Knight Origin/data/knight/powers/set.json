@@ -1,0 +1,35 @@
+{
+    "type": "origins:multiple",
+    "set": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:change_resource",
+            "resource": "knight:bar",
+            "change": 500,
+            "operation": "set"
+        },
+        "entity_action_added": {
+            "type":  "origins:change_resource",
+            "resource": "knight:bar",
+            "change": 500,
+            "operation": "set"
+        },
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:revoke_power",
+                    "power": "knight:slash",
+                    "source": "knight:powers"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "knight:bar",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        }
+    },
+    "hidden": true
+}

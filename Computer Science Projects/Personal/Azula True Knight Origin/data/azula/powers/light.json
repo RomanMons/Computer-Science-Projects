@@ -1,0 +1,57 @@
+{
+    "type": "apoli:multiple",
+    "die": {
+        "type": "apoli:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:execute_command",
+                    "command": "tag @s add lightcheck"
+                },
+                {
+                    "type": "apoli:execute_command",
+                    "command": "execute unless entity @e[type=armor_stand,tag=!lightcheck,tag=lightlibstand,distance=..0.4] run fill ~ ~ ~ ~ ~ ~ minecraft:air replace minecraft:light"
+                },
+                {
+                    "type": "apoli:execute_command",
+                    "command": "tag @s remove lightcheck"
+                },
+                {
+                    "type": "apoli:execute_command",
+                    "command": "tp ~ -100 ~"
+                },
+                {
+                    "type": "apoli:execute_command",
+                    "command": "kill @s"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "azula:final_toggle",
+            "inverted": true
+        }
+    },
+    "call": {
+        "type": "apoli:action_on_callback",
+        "entity_action_added": {
+            "type": "apoli:execute_command",
+            "command": "setblock ~ ~ ~ light[level=14] keep"
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "azula:final_toggle",
+            "inverted": true
+        }
+    },
+    "prevent": {
+        "type": "apoli:prevent_being_used",
+        "condition": {
+            "type": "origins:power_active",
+            "power": "azula:final_toggle",
+            "inverted": true
+        }
+    }
+}

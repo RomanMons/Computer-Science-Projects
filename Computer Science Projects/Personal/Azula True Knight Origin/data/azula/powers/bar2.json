@@ -1,0 +1,20 @@
+{
+    "type": "origins:resource",
+    "min": 0,
+    "max": 12000,
+    "hud_render": {
+        "inverted": true,
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+        "bar_index": 1,
+        "order": 1,
+        "condition": {
+            "inverted": true,
+            "type": "origins:resource",
+            "resource": "azula:bar2",
+            "comparison": "==",
+            "compare_to": 12000
+        }
+    },
+    "hidden": true
+}

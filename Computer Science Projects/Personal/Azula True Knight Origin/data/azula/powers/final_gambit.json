@@ -1,0 +1,260 @@
+{
+    "type": "origins:multiple",
+    "explode": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function final_flash"
+                },
+                {
+                    "type": "origins:explode",
+                    "power": 15,
+                    "destruction_type": "destroy",
+                    "damage_self": false,
+                    "create_fire": true
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "azula:bar",
+                    "change": -2000
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 16,
+                    "shape": "sphere",
+                    "bientity_action": {
+                        "type": "origins:damage",
+                        "amount": 40,
+                        "damage_type": "minecraft:generic"
+                    }
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 16,
+                    "shape": "sphere",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:spawn_entity",
+                            "entity_type": "minecraft:lightning_bolt"
+                        }
+                    },
+                    "bientity_condition": {
+                        "type": "origins:can_see"
+                    }
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 32,
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:set_on_fire",
+                            "duration": 10
+                        }
+                    },
+                    "bientity_condition": {
+                        "type": "origins:can_see"
+                    }
+                },
+                {
+                    "type": "origins:grant_power",
+                    "power": "azula:invulnerability",
+                    "source": "azula:powers"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 200,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:invulnerability",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:grant_power",
+                    "power": "azula:speed_gambit",
+                    "source": "azula:powers"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 200,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:speed_gambit",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 200,
+                    "action": {
+                        "type": "origins:grant_power",
+                        "power": "azula:slow2_gambit",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 6000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:slow2_gambit",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 6000,
+                    "action": {
+                        "type": "origins:grant_power",
+                        "power": "azula:slow1_gambit",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 9000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:slow1_gambit",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 9000,
+                    "action": {
+                        "type": "origins:grant_power",
+                        "power": "azula:slow_gambit",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 12000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:slow_gambit",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 200,
+                    "action": {
+                        "type": "origins:grant_power",
+                        "power": "azula:health",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 6000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:health",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 6000,
+                    "action": {
+                        "type": "origins:grant_power",
+                        "power": "azula:health1",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 9000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:health1",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 9000,
+                    "action": {
+                        "type": "origins:grant_power",
+                        "power": "azula:health2",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 12000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:health2",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:grant_power",
+                    "power": "azula:particles1",
+                    "source": "azula:powers"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 12000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:particles1",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:grant_power",
+                    "power": "azula:bar2",
+                    "source": "azula:powers"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 12000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:bar2",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:grant_power",
+                    "power": "azula:bar2_charge",
+                    "source": "azula:powers"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 12000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:bar2_charge",
+                        "source": "azula:powers"
+                    }
+                },
+                {
+                    "type": "origins:grant_power",
+                    "power": "azula:final_toggle",
+                    "source": "azula:powers"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 12000,
+                    "action": {
+                        "type": "origins:revoke_power",
+                        "power": "azula:final_toggle",
+                        "source": "azula:powers"
+                    }
+                }
+            ]
+        },
+        "cooldown": "20",
+        "key": "key.saveToolbarActivator"
+    }
+}

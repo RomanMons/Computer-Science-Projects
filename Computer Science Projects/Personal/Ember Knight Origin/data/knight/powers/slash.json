@@ -1,0 +1,3738 @@
+{
+    "hidden": true,
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions":[
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">=",
+                                "compare_to": 1.5
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 50,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "any",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 20,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 6.5
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": true,
+                                        "power": 6
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1.5,
+                                        "z": 3
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": true,
+                                        "power": 6
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1.5,
+                                        "z": 3
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:ass1"
+                            },
+                            "command_at_hit": "/function knight:cah1",
+                            "command_along_ray": "/function knight:horizontal_fire_slash",
+                            "command_step": 10,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": 0.5
+                            }
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<",
+                                "compare_to": 1.5
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 35,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "any",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 15,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 5
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 5
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1,
+                                        "z": 2
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 5
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1,
+                                        "z": 2
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:ass0"
+                            },
+                            "command_at_hit": "/function knight:cah0",
+                            "command_along_ray": "/function knight:horizontal_fire_slash",
+                            "command_step": 10,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0.5
+                            }
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 20,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "any",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 10,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 4
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 4
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.75,
+                                        "z": 1.25
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 4
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.75,
+                                        "z": 1.25
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:ass2"
+                            },
+                            "command_at_hit": "/function knight:cah2",
+                            "command_along_ray": "/function knight:horizontal_fire_slash",
+                            "command_step": 10,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 10,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "any",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 7,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 3
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 3
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.5,
+                                        "z": 1
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 3
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.5,
+                                        "z": 1
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:ass3"
+                            },
+                            "command_at_hit": "/function knight:cah3",
+                            "command_along_ray": "/function knight:horizontal_fire_slash",
+                            "command_step": 10,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">=",
+                                "compare_to": 1.5
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 2,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 12,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 3
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": true,
+                                        "power": 3
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.75,
+                                        "z": 1.5
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": true,
+                                        "power": 3
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.75,
+                                        "z": 1.5
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss"
+                            },
+                            "command_at_hit": "/function knight:smoke1",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 2,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": 0.5
+                            }
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<",
+                                "compare_to": 1.5
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 9,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 3
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 2
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.65,
+                                        "z": 1.25
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 2
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.65,
+                                        "z": 1.25
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 4,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0.5
+                            }
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 7,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 2.5
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 1.5
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.5,
+                                        "z": 1
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 1.5
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.5,
+                                        "z": 1
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke2",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 4.5,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 2
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 1
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.35,
+                                        "z": 0.85
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 1
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.35,
+                                        "z": 0.85
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke3",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 6,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">=",
+                                "compare_to": 1.5
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 2,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke4",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 2.5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": 0.5
+                            }
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<",
+                                "compare_to": 1.5
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke5",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 4.5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0.5
+                            }
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke6",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 5.5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke7",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 6.5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">=",
+                                "compare_to": 1.5
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 2,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke5",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 3,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": 0.5
+                            }
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<",
+                                "compare_to": 1.5
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke6",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0.5
+                            }
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke7",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 0
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke8",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 7,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire"
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">=",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 50,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "any",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 20,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 6.5
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": true,
+                                        "power": 6
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1.5,
+                                        "z": 3
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": true,
+                                        "power": 6
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1.5,
+                                        "z": 3
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:ass1"
+                            },
+                            "command_at_hit": "/function knight:cah1",
+                            "command_along_ray": "/function knight:horizontal_fire_slash",
+                            "command_step": 10,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire"
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 35,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "any",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 15,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 5
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 5
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1,
+                                        "z": 2
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 5
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1,
+                                        "z": 2
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:ass0"
+                            },
+                            "command_at_hit": "/function knight:cah0",
+                            "command_along_ray": "/function knight:horizontal_fire_slash",
+                            "command_step": 10,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 35,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "any",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 15,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 5
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 5
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1,
+                                        "z": 2
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 5
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 1,
+                                        "z": 2
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:ass0"
+                            },
+                            "command_at_hit": "/function knight:cah0",
+                            "command_along_ray": "/function knight:horizontal_fire_slash",
+                            "command_step": 10,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire"
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">=",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 2,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 12,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 3
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": true,
+                                        "power": 3
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.75,
+                                        "z": 1.5
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": true,
+                                        "power": 3
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.75,
+                                        "z": 1.5
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss"
+                            },
+                            "command_at_hit": "/function knight:smoke1",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 2,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire"
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 9,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 3
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 2
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.65,
+                                        "z": 1.25
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 2
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.65,
+                                        "z": 1.25
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 4,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:damage",
+                                        "amount": 9,
+                                        "damage_type": "minecraft:on_fire"
+                                    },
+                                    {
+                                        "type": "origins:set_on_fire",
+                                        "duration": 3
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 2
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.65,
+                                        "z": 1.25
+                                    }
+                                ]
+                            },
+                            "block_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:explode",
+                                        "destruction_type": "none",
+                                        "damage_self": false,
+                                        "create_fire": false,
+                                        "power": 2
+                                    },
+                                    {
+                                        "type": "origins:add_velocity",
+                                        "y": 0.65,
+                                        "z": 1.25
+                                    }
+                                ]
+                            },
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 4,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire"
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">=",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 2,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke4",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 2.5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire"
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke5",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 4.5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke5",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 4.5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire"
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">=",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 2,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke5",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 3,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire"
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            },
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke6",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:on_fire",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:magma_block"
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "inverted": true,
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": [
+                                    {
+                                        "tag": "minecraft:axe"
+                                    },
+                                    {
+                                        "tag": "minecraft:sword"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": "<",
+                            "compare_to": 300
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "inverted": true,
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke6",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 5,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "knight:bar",
+                            "comparison": ">=",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": ">",
+                                "compare_to": -10
+                            }
+                        },
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:fluid_height",
+                                    "fluid": "minecraft:water",
+                                    "comparison": ">",
+                                    "compare_to": 0.0
+                                },
+                                {
+                                    "type": "origins:in_rain"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:revoke_power",
+                            "power": "knight:slash",
+                            "source": "knight:powers"
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar1",
+                            "change": 0,
+                            "operation": "set"
+                        },
+                        {
+                            "type": "origins:raycast",
+                            "distance": 1.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "visual",
+                            "fluid_handling": "none",
+                            "space": "local",
+                            "before_action": {
+                                "type": "origins:execute_command",
+                                "command": "function knight:sss0"
+                            },
+                            "command_at_hit": "/function knight:smoke9",
+                            "command_step": 1.5,
+                            "command_along_ray_only_on_hit": false
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "knight:bar",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:damage",
+                            "amount": 8,
+                            "damage_type": "minecraft:generic"
+                        },
+                        {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:damage",
+                                "amount": 15,
+                                "ignore_unbreaking": false
+                            }
+                        },
+                        {
+                            "type": "origins:swing_hand",
+                            "hand": "MAIN_HAND"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 20,
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "hud_render": {
+        "should_render": false
+    }
+}

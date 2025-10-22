@@ -1,0 +1,92 @@
+{
+    "type": "origins:multiple",
+    "run": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "name": "Max speed increase",
+            "attribute": "minecraft:generic.movement_speed",
+            "value": 0.24,
+            "operation": "multiply_total"
+        },
+        "tick_rate": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sprinting"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "strong": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "addition",
+            "value": 3
+        },
+        "tick_rate": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:status_effect",
+                    "effect": "minecraft:darkness",
+                    "min_amplifier": 0,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "azula:final_toggle",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "armour": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 6
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "azula:final_toggle",
+            "inverted": true
+        }
+    },
+    "knock": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.knockback_resistance",
+            "operation": "addition",
+            "value": 0.15
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "azula:final_toggle",
+            "inverted": true
+        }
+    },
+    "tough": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor_toughness",
+            "operation": "addition",
+            "value": 2
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "azula:final_toggle",
+            "inverted": true
+        }
+    },
+    "name": "§8§n§lArmoured Stance",
+    "description": "You have evolved your stance into an 'Armoured Stance' and have strengthened your body, whilst also becoming for agile. \n\n(+24% speed when sprinting, natural armour and knockback resistance)"
+}
